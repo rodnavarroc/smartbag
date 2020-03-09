@@ -1,0 +1,7 @@
+{
+  "name": "maleta",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

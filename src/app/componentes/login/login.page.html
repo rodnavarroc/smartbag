@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">SmartBag</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	
+	<img src="https://imageog.flaticon.com/icons/png/512/1058/1058958.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="img" width="100%">
+
+	<br><br>
+	<ion-card-subtitle class="ion-text-center">INICIAR SESIÓN</ion-card-subtitle><br>
+
+	<ion-item>
+		<ion-label position="floating">Correo electrónico</ion-label> 
+		<ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label position="floating">Contraseña</ion-label>
+		<ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+	</ion-item>
+
+	<br><br>
+	<ion-button (click)="onSubmitLogin()" expand="block" size="medium" fill="outline" color="dark">Ingresar</ion-button>
+
+</ion-content>

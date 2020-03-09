@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">SmartBag</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+	<br><ion-card-title class="ion-text-center">¡Bienvenido, Rodolfo!</ion-card-title>
+	<ion-card-subtitle class="ion-text-center" color="primary">Su maleta está segura</ion-card-subtitle><br>
+
+	<br><ion-card-subtitle>Acciones principales</ion-card-subtitle><br>
+	<ion-grid>
+	  <ion-row>
+	    <ion-col>
+	      <div>
+	        <img src="https://image.flaticon.com/icons/svg/1580/1580949.svg" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	        <h6 class="ion-text-center">Bloquear Maleta</h6>
+	      </div>
+	    </ion-col>
+	    <ion-col>
+	      <div>
+	        <img src="https://izandoservices.com/wp-content/uploads/2019/10/warning.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	        <h6 class="ion-text-center">Activar Alarma</h6>
+	      </div>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+
+	<br><ion-card-subtitle>Otras acciones</ion-card-subtitle><br>
+	<ion-grid>
+	  <ion-row>
+	    <ion-col>
+	      <div>
+	        <img src="https://cdn.onlinewebfonts.com/svg/img_102316.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	        <h6 class="ion-text-center">Añadir Huella Digital</h6>
+	      </div>
+	    </ion-col>
+	    <ion-col>
+	      <div>
+	        <img src="https://image.flaticon.com/icons/png/512/138/138840.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	        <h6 class="ion-text-center">Historial</h6>
+	      </div>
+	    </ion-col>
+	  </ion-row>
+	  <ion-row>
+	  	<ion-col><br>
+	  		<ion-button expand="block" size="default" color="primary" fill="outline">Consejos de seguridad</ion-button>
+	  	</ion-col>
+	  </ion-row>
+	</ion-grid>
+	<br>
+
+</ion-content>
+<ion-footer no-shadow class="ion-padding">
+	<ion-toolbar position="bottom">
+		<ion-button (click)="onLogout()" expand="block" size="small" color="dark" fill="outline">Salir de la sesión</ion-button>
+	</ion-toolbar>
+</ion-footer>
+
