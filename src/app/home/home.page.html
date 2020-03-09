@@ -1,27 +1,31 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title class="ion-text-center">SmartBag</ion-title>
+    <ion-title class="ion-text-center">SmartBag | Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
-	<br><ion-card-title class="ion-text-center">¡Bienvenido, Rodolfo!</ion-card-title>
-	<ion-card-subtitle class="ion-text-center" color="primary">Su maleta está segura</ion-card-subtitle><br>
+	<br><ion-card-title class="ion-text-center">¡Bienvenido!</ion-card-title>
+	<ion-card-subtitle class="ion-text-center" color="primary">Su maleta está asegurada</ion-card-subtitle><br>
 
 	<br><ion-card-subtitle>Acciones principales</ion-card-subtitle><br>
 	<ion-grid>
 	  <ion-row>
 	    <ion-col>
 	      <div>
+	      	<button  (click)="AccesoHuellaBM()" block style="background-color: transparent;">
 	        <img src="https://image.flaticon.com/icons/svg/1580/1580949.svg" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
 	        <h6 class="ion-text-center">Bloquear Maleta</h6>
+	    	</button>
 	      </div>
 	    </ion-col>
 	    <ion-col>
 	      <div>
+	      	<button  (click)="AccesoHuellaActAl()" block style="background-color: transparent;">
 	        <img src="https://izandoservices.com/wp-content/uploads/2019/10/warning.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
-	        <h6 class="ion-text-center">Activar Alarma</h6>
+	    	<h6 class="ion-text-center">Activar Alarma</h6>
+	    	</button>
 	      </div>
 	    </ion-col>
 	  </ion-row>
@@ -33,20 +37,24 @@
 	  <ion-row>
 	    <ion-col>
 	      <div>
-	        <img src="https://cdn.onlinewebfonts.com/svg/img_102316.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	      	<button  (click)="InfoHuella()" block style="background-color: transparent;">
+	        <img src="https://cdn.onlinewebfonts.com/svg/img_102316.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;">
 	        <h6 class="ion-text-center">Añadir Huella Digital</h6>
+	        </button>
 	      </div>
 	    </ion-col>
 	    <ion-col>
 	      <div>
+	      	<button  (click)="InfoHistorial()" block style="background-color: transparent;">
 	        <img src="https://image.flaticon.com/icons/png/512/138/138840.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
 	        <h6 class="ion-text-center">Historial</h6>
+	    	</button>
 	      </div>
 	    </ion-col>
 	  </ion-row>
 	  <ion-row>
 	  	<ion-col><br>
-	  		<ion-button expand="block" size="default" color="primary" fill="outline">Consejos de seguridad</ion-button>
+	  		<ion-button expand="block" size="default" color="primary" fill="outline" (click)="InfoSeguridad()">Consejos de seguridad</ion-button>
 	  	</ion-col>
 	  </ion-row>
 	</ion-grid>
@@ -58,4 +66,3 @@
 		<ion-button (click)="onLogout()" expand="block" size="small" color="dark" fill="outline">Salir de la sesión</ion-button>
 	</ion-toolbar>
 </ion-footer>
-

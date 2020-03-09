@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-title class="ion-teionic cordova plugin add cordova-plugin-statusbarxt-center">SmartBag | Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	
+	<br>
+	<img src="https://4.bp.blogspot.com/-FilVzeTMDTo/WgXS2hgBA9I/AAAAAAAAATc/OEBvik6Lbpo7PjwUR2Dzyq9K_AvZrYavwCLcBGAs/s1600/icono_admisi%25C3%25B3n_new.png" class="img" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+	<br><br>
+	<ion-card-subtitle class="ion-text-center">REGISTRAR NUEVA CUENTA</ion-card-subtitle><br>
+
+	<ion-item>
+		<ion-label position="floating">Nombre</ion-label> 
+		<ion-input type="text" [(ngModel)]="name" name="email"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label position="floating">Correo electrónico</ion-label> 
+		<ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label position="floating">Contraseña</ion-label>
+		<ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+	</ion-item>
+
+	<br><br>
+	<ion-button (click)="OnSubmitRegister()" expand="block" size="medium" fill="outline" color="dark">Registrarse</ion-button>
+	<p class="ion-text-center" routerLink="/home">Regresar</p>
+
+</ion-content>

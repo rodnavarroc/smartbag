@@ -23,5 +23,4 @@ export class LoginPage implements OnInit {
   		this.router.navigate(['/home']);
   	}).catch(err => alert('Los datos ingresados son incorrectos o el usuario no existe.'));
   }
-
 }
