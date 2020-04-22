@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../servicios/auth.service';
 import { AlertController } from '@ionic/angular';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 })
 export class HomePage {
 
-  constructor(public authservice : AuthService, public alertController: AlertController, private faio: FingerprintAIO) {}
+  constructor(public authservice : AuthService, public alertController: AlertController, private faio: FingerprintAIO, private bluetoothSerial: BluetoothSerial, private toastCtrl: ToastController) {}
 
   onLogout()
   {
@@ -59,11 +61,11 @@ export class HomePage {
    fallbackButtonTitle: 'Utilizar Pin', // optional | When disableBackup is false defaults to "Use Pin". // When disableBackup is true defaults to "Cancel"
    disableBackup:false,  // optional | default: false
    })
-  .then((result: any) => console.log(result))
+  .then((result: any) => this.sendDataBloquear())
   .catch((error: any) => console.log(error));
   }
 
-  AccesoHuellaActAl()
+  AccesoHuellaDM()
   {
    this.faio.show({
    title: 'Autenticación Biométrica', // (Android Only) | optional | Default: "<APP_NAME> Biometric Sign On"
@@ -72,7 +74,48 @@ export class HomePage {
    fallbackButtonTitle: 'Utilizar Pin', // optional | When disableBackup is false defaults to "Use Pin". // When disableBackup is true defaults to "Cancel"
    disableBackup:false,  // optional | default: false
    })
-  .then((result: any) => console.log(result))
+  .then((result: any) => this.sendDataDesbloquear())
   .catch((error: any) => console.log(error));
+  } 
+
+  sendDataDesbloquear() {
+    let dataSend = 'off';
+    //this.showToast(dataSend);
+
+    this.bluetoothSerial.write(dataSend).then(success => {
+      this.showToast('La maleta se ha desbloqueado');
+    }, error => {
+      this.showError(error)
+    });
   }
+
+  sendDataBloquear() {
+    let dataSend = 'on';
+   // this.showToast(dataSend);
+
+    this.bluetoothSerial.write(dataSend).then(success => {
+      this.showToast('La maleta se ha bloqueado');
+    }, error => {
+      this.showError(error)
+    });
+  }
+
+  async showError(error) {
+    let alert = await this.alertController.create({
+      header: 'Error',
+      subHeader: error,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
+  }
+
+  async showToast(msj) {
+    const toast = await this.toastCtrl.create({
+      message: msj,
+      duration: 1000
+    });
+    await toast.present();
+
+  }
+
 }

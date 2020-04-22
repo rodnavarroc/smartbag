@@ -14,6 +14,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FingerprintAIO,
+    BluetoothSerial,
     AngularFirestore
   ],
   bootstrap: [AppComponent]

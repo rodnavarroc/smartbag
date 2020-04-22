@@ -15,16 +15,16 @@
 	    <ion-col>
 	      <div>
 	      	<button  (click)="AccesoHuellaBM()" block style="background-color: transparent;">
-	        <img src="https://image.flaticon.com/icons/svg/1580/1580949.svg" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	        <img src="../../assets/bloquear.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
 	        <h6 class="ion-text-center">Bloquear Maleta</h6>
 	    	</button>
 	      </div>
 	    </ion-col>
 	    <ion-col>
 	      <div>
-	      	<button  (click)="AccesoHuellaActAl()" block style="background-color: transparent;">
-	        <img src="https://izandoservices.com/wp-content/uploads/2019/10/warning.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
-	    	<h6 class="ion-text-center">Activar Alarma</h6>
+	      	<button  (click)="AccesoHuellaDM()" block style="background-color: transparent;">
+	        <img src="../../assets/desbloquear.png" style="display: block; margin-left: auto; margin-right: auto; width: 75%;" ng-click="">
+	    	<h6 class="ion-text-center">Desbloquear Maleta</h6>
 	    	</button>
 	      </div>
 	    </ion-col>
@@ -52,11 +52,16 @@
 	      </div>
 	    </ion-col>
 	  </ion-row>
+
 	  <ion-row>
 	  	<ion-col><br>
 	  		<ion-button expand="block" size="default" color="primary" fill="outline" (click)="InfoSeguridad()">Consejos de seguridad</ion-button>
 	  	</ion-col>
+	  	<ion-col>
+	  		<ion-button routerLink="/bluetooth" expand="block" size="medium" fill="outline" color="medium"><ion-icon name="bluetooth"></ion-icon>Configurar Bluetooth</ion-button>
+	  	</ion-col>
 	  </ion-row>
+
 	</ion-grid>
 	<br>
 
