@@ -75,7 +75,7 @@ export class BluetoothPage {
   }
 
   handleData(data) {
-    this.showToast(data);
+    //this.showToast(data);
   }
 
   sendData() {
